@@ -8,6 +8,10 @@ class BookListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = BookSerializer
     template_name = "books/booklist.html"
     def perform_create(self, serializer):
+        if self.request.user == None:
+            self.request.user = self.request.user
+        else:
+            pass 
         serializer.save(author=self.request.user)
 
     def get_queryset(self):
