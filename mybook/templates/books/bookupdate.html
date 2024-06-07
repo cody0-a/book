@@ -1,0 +1,12 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+
+    {% for book in object_list %}
+        <h1>{{book.title}}</h1> 
+        <h2>{{book.author}}</h2>
+        <h3>{{book.price}}</h3>
+        <h4>{{book.published_date}}</h4>
+    {% endfor %}
+
+{% endblock %}
